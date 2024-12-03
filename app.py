@@ -76,33 +76,53 @@ elif st.session_state.page == "interview":
     st.header(f"Interview for {case_details['job_title']} at {case_details['company_name']}")
     st.subheader(f"Candidate: {case_details['candidate_name']}")
 
-    if "question_index" not in st.session_state:
-        st.session_state.question_index = 0
-        st.session_state.conversation_history = []
+    if "intro_complete" not in st.session_state:
+        st.session_state.intro_complete = False
+    if "user_questions" not in st.session_state:
+        st.session_state.user_questions = []
 
-    questions = case_details["questions"]
-    if st.session_state.question_index < len(questions):
-        current_question = questions[st.session_state.question_index]
-        st.write(f"**Question:** {current_question}")
+    # Introduction Phase
+    if not st.session_state.intro_complete:
+        st.write("Welcome to the interview. We will begin by asking you a series of questions related to the job role.")
+        st.write("If you have any questions before we start, please feel free to ask them below, or click 'Proceed' to start the interview.")
 
-        response = st.text_input("Your Answer", key=f"answer_{st.session_state.question_index}")
-        if (st.button("Submit Answer") or response) and response:
-            st.session_state.conversation_history.append((current_question, response))
-            st.session_state.question_index += 1
+        user_question = st.chat_input("Ask a Question!")
+        if user_question:
+            # Placeholder for backend agent response (to be implemented later)
+            response = f"[Agent Response Placeholder] You asked: '{user_question}'. Here is the response."
+            st.session_state.user_questions.append((user_question, response))
+
+        for q, r in st.session_state.user_questions:
+            with st.chat_message("user"):
+                st.write(f"{q}")
+            with st.chat_message("assistant"):
+                st.write(f"{r}")
+
+        if st.button("Proceed to Interview"):
+            st.session_state.intro_complete = True
+            st.rerun()
+    else:
+    # Interview Question Phase
+        if "question_index" not in st.session_state:
+            st.session_state.question_index = 0
+            st.session_state.conversation_history = []
+
+        questions = case_details["questions"]
+        if st.session_state.question_index < len(questions):
+            current_question = questions[st.session_state.question_index]
+            st.write(f"**Question:** {current_question}")
+
+            response = st.text_input("Your Answer", key=f"answer_{st.session_state.question_index}")
+            if response:
+                st.session_state.conversation_history.append((current_question, response))
+                st.session_state.question_index += 1
+                st.rerun()
+        else:
+            st.success("Interview Complete!")
+            time.sleep(3)
+            st.session_state.page = "summary"
             st.rerun()
 
-        # if st.button("Listen to Answer"):
-        #     text_to_speech(current_question)
-        #     response = recognize_speech()
-        #     if response:
-        #         st.session_state.conversation_history.append((current_question, response))
-        #         st.session_state.question_index += 1
-        #         st.rerun()
-    else:
-        st.success("Interview Complete! Transferring to Summary...")
-        time.sleep(3)
-        st.session_state.page = "summary"
-        st.rerun()
 
 # Summary Page
 elif st.session_state.page == "summary":
