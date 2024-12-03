@@ -31,6 +31,8 @@ CREATE TABLE job_postings (
     job_title VARCHAR(150) NOT NULL,
     job_description TEXT,
     skills_required TEXT,
+    questions TEXT,
+    revision_number INT DEFAULT 1,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -56,8 +58,8 @@ CREATE TABLE interview_sessions (
 INSERT INTO companies (company_name, industry, address, contact_info) VALUES
 ('Tech Corp', 'Software Development', '123 Tech Street, Tech City', 'info@techcorp.com');
 
-INSERT INTO job_postings (company_id, job_title, job_description, skills_required) VALUES
-(1, 'Software Engineer', 'Develop and maintain software solutions.', 'Python, SQL, REST APIs');
+INSERT INTO job_postings (company_id, job_title, job_description, skills_required, questions, revision_number) VALUES
+(1, 'Software Engineer', 'Develop and maintain software solutions.', 'Python, SQL, REST APIs', '[{"question": "What is your experience with Python?"}, {"question": "Describe a challenging project you worked on."}]', 1);
 
 INSERT INTO users (name, email) VALUES
 ('John Doe', 'john.doe@example.com');
