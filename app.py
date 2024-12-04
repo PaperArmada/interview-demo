@@ -3,6 +3,7 @@ import time
 # import speech_recognition as sr
 # import pyttsx3
 import psycopg2
+import random
 from psycopg2 import sql
 
 # Placeholder functions for database operations (to be implemented)
@@ -102,21 +103,61 @@ elif st.session_state.page == "interview":
             st.session_state.intro_complete = True
             st.rerun()
     else:
-    # Interview Question Phase
+        # Interview Question Phase
         if "question_index" not in st.session_state:
             st.session_state.question_index = 0
             st.session_state.conversation_history = []
+            st.session_state.followup_phase = False
+            st.session_state.followup_questions = []
+            st.session_state.awaiting_summary_confirmation = False
 
         questions = case_details["questions"]
         if st.session_state.question_index < len(questions):
             current_question = questions[st.session_state.question_index]
             st.write(f"**Question:** {current_question}")
 
-            response = st.text_input("Your Answer", key=f"answer_{st.session_state.question_index}")
-            if response:
-                st.session_state.conversation_history.append((current_question, response))
-                st.session_state.question_index += 1
-                st.rerun()
+            # User's initial response to the question
+            if not st.session_state.followup_phase and not st.session_state.awaiting_summary_confirmation:
+                response = st.text_input("Your Answer", key=f"answer_{st.session_state.question_index}")
+                if response:
+                    # Placeholder for agent interpretation (to be implemented later)
+                    st.session_state.conversation_history.append((current_question, response))
+                    followup_needed = True  # Placeholder for determining if followup is needed
+                    if followup_needed:
+                        st.session_state.followup_phase = True
+                        st.session_state.followup_questions.append("[Agent Followup Placeholder] Can you elaborate on that?")
+                    else:
+                        st.session_state.awaiting_summary_confirmation = True
+                    st.rerun()
+
+            # Follow-up questions phase
+            if st.session_state.followup_phase:
+                if st.session_state.followup_questions:
+                    followup_question = st.session_state.followup_questions.pop(0)
+                    st.write(f"**Follow-up Question:** {followup_question}")
+                    followup_response = st.text_input("Your Answer to Follow-up", key=f"followup_{st.session_state.question_index}")
+                    if followup_response:
+                        # Placeholder for agent interpretation of followup (to be implemented later)
+                        st.session_state.conversation_history.append((followup_question, followup_response))
+                        # Assume follow-up is resolved for simplicity
+                        st.session_state.followup_phase = False
+                        st.session_state.awaiting_summary_confirmation = True
+                        st.rerun()
+
+            # Summary and evaluation phase
+            if st.session_state.awaiting_summary_confirmation:
+                # Placeholder for agent summary (to be implemented later)
+                summary = f"[Agent Summary Placeholder] Based on your responses, it sounds like you have good experience with {current_question}. Do you agree?"
+                st.write(summary)
+                if st.button("Agree", key=f"agree_{st.session_state.question_index}"):
+                    st.session_state.awaiting_summary_confirmation = False
+                    st.session_state.question_index += 1
+                    st.rerun()
+                if st.button("Disagree", key=f"disagree_{st.session_state.question_index}"):
+                    st.session_state.followup_phase = True
+                    st.session_state.followup_questions.append("[Agent Followup Placeholder] Could you clarify your previous answer?")
+                    st.session_state.awaiting_summary_confirmation = False
+                    st.rerun()
         else:
             st.success("Interview Complete!")
             time.sleep(3)
