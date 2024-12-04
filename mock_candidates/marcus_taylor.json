@@ -1,0 +1,72 @@
+{
+  "responses": {
+	"behavioral": [
+  	{
+    	"response": "While leading a development team at a large tech company, we encountered a major scalability issue with a distributed system. I initiated a root cause analysis and proposed a microservices architecture to address the problem. We deployed the solution incrementally, reducing downtime by 40% and improving system reliability."
+  	},
+  	{
+    	"response": "I worked on an LLM-based internal knowledge assistant prototype for my team. Although new to LLMs, I leveraged open-source tools and fine-tuned a pre-trained model to answer domain-specific queries. The project enhanced team efficiency by automating repetitive tasks, saving hours of manual effort each week."
+  	},
+  	{
+    	"response": "In a complex project with multiple teams, I acted as a mediator to resolve conflicting goals between engineering and product stakeholders. By hosting regular sync-ups and creating shared documentation, I ensured clear communication and alignment, which led to the successful delivery of the project."
+  	},
+  	{
+    	"response": "When a project scope unexpectedly expanded, I collaborated with my team to reprioritize tasks and distribute workloads effectively. We delivered the key features on schedule, and I documented the additional requirements to address them in a subsequent release."
+  	},
+  	{
+    	"response": "At my previous company, I mentored junior developers by hosting weekly sessions on best practices for system design and debugging. This not only improved their technical skills but also fostered a collaborative and learning-oriented culture in the team."
+  	}
+	],
+	"situational": [
+  	{
+    	"response": "If a critical performance issue arose, I would immediately analyze system logs and metrics to pinpoint the bottleneck. I’d work with the team to implement a temporary fix, such as scaling resources, while developing a long-term solution after stabilizing the system for launch."
+  	},
+  	{
+    	"response": "To handle a 10x scaling requirement, I would propose reviewing the existing system’s architecture for bottlenecks and introducing parallel processing or cloud-based auto-scaling. Regular stress testing would ensure that the pipeline meets performance expectations at higher loads."
+  	},
+  	{
+    	"response": "When integrating a new LLM tool, I would create a proof-of-concept environment to test its performance and compatibility. Afterward, I’d develop a modular integration plan to reduce risk during deployment, incorporating regular reviews and checkpoints to ensure success."
+  	},
+  	{
+    	"response": "In the case of conflicting priorities between product and engineering teams, I’d facilitate a joint planning session to align on immediate goals. By breaking the project into manageable phases, I’d ensure both short-term needs and long-term goals are addressed systematically."
+  	},
+  	{
+    	"response": "To prioritize multiple deadlines, I use a combination of task impact and urgency. I’d communicate with stakeholders to manage expectations and allocate team resources effectively, ensuring the most critical deliverables are completed first."
+  	}
+	],
+	"technical": [
+  	{
+    	"response": "While new to prompt engineering, I recently experimented with it in a prototype LLM system. By iteratively refining prompts, I improved the model’s ability to generate accurate technical documentation by 20%, demonstrating its potential in real-world applications."
+  	},
+  	{
+    	"response": "I worked on a proof-of-concept for a vector-based search system to enhance an enterprise document retrieval platform. The main challenge was ensuring low-latency responses, which I solved by optimizing the embedding generation process and implementing caching mechanisms."
+  	},
+  	{
+    	"response": "I led a project to refactor a legacy system for better scalability. By modularizing components and optimizing database queries, we reduced response times by 50% and prepared the system for additional growth."
+  	},
+  	{
+    	"response": "For CI/CD pipelines, I implemented Jenkins pipelines with Docker for consistent environments and integrated automated tests for each commit. This approach reduced deployment errors by 30% and improved release velocity."
+  	},
+  	{
+    	"response": "In addressing a data pipeline bottleneck, I identified inefficiencies in the ETL process. By introducing parallel processing and optimizing data transformations, I reduced processing time by 40% while maintaining data integrity."
+  	}
+	],
+	"cultural_fit": [
+  	{
+    	"response": "Astoria AI’s mission resonates with me because I believe technology should empower people. I’m inspired by the opportunity to use cutting-edge AI solutions to unlock potential for both individuals and organizations."
+  	},
+  	{
+    	"response": "Human-centric innovation means designing technology that meets real user needs. In one project, I worked closely with users to tailor a system’s features, resulting in a product that was both effective and highly adopted."
+  	},
+  	{
+    	"response": "To me, teamwork is about fostering open communication and mutual respect. I’ve successfully led cross-functional teams where everyone’s input was valued, resulting in cohesive and successful project deliveries."
+  	},
+  	{
+    	"response": "I stay current with AI advancements by attending conferences and participating in industry meetups. Recently, I applied learnings from an NLP workshop to improve the search capabilities of an internal tool I was developing."
+  	},
+  	{
+    	"response": "Ethics in AI is crucial to me. In one project, I implemented data anonymization to protect user privacy while ensuring compliance with regulations. This approach built trust with stakeholders and users alike."
+  	}
+	]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "responses": {
+	"behavioral": [
+  	{
+    	"response": "In my graduate research, I faced a challenge where the pre-trained model we used for RAG wasn’t performing well on our dataset. I designed a custom fine-tuning process using domain-specific data and improved retrieval accuracy by 30%. This adjustment was critical to the success of the project."
+  	},
+  	{
+    	"response": "During an internship, I built a conversational AI assistant for a nonprofit organization. I used GPT-3 and fine-tuned it with volunteer-specific data. By optimizing prompts, I reduced irrelevant responses and increased task completion rates by 20%, which helped streamline volunteer onboarding."
+  	},
+  	{
+    	"response": "While working on a team project in graduate school, we had to integrate our AI model with a web application. I took the initiative to organize daily stand-ups to align our goals and track progress. This approach helped us finish the project two weeks ahead of schedule."
+  	},
+  	{
+    	"response": "In one project, the requirements changed mid-development to include a new language for our chatbot. I quickly researched tools for multilingual support and incorporated them into the system. The client was impressed, and the project exceeded their expectations despite the additional complexity."
+  	},
+  	{
+    	"response": "I organized a workshop during my internship to teach non-technical staff about AI’s potential in their roles. This initiative improved collaboration across teams and gave me an opportunity to share my knowledge while learning about other perspectives."
+  	}
+	],
+	"situational": [
+  	{
+    	"response": "If a critical performance issue arose, I’d first analyze logs and metrics to identify the bottleneck. Once located, I’d collaborate with the team to implement a quick fix, such as optimizing code or scaling resources, ensuring the system could function for launch while developing a permanent solution."
+  	},
+  	{
+    	"response": "To scale a pipeline by 10x, I would first benchmark its current performance. Then, I’d propose optimizations like batch processing or parallelization and explore cloud solutions to dynamically allocate resources, ensuring scalability without compromising efficiency."
+  	},
+  	{
+    	"response": "For integrating an untested LLM tool, I’d conduct a sandbox test to evaluate its reliability and compatibility. Based on the results, I’d develop a modular integration plan and continuously test its performance during phased deployment."
+  	},
+  	{
+    	"response": "If product and development teams had conflicting priorities, I’d propose breaking the project into smaller, iterative milestones. This way, immediate product needs could be addressed while laying the groundwork for long-term development goals."
+  	},
+  	{
+    	"response": "When managing multiple deadlines, I use tools like Trello to organize tasks by priority and complexity. I communicate progress with stakeholders regularly, ensuring that high-impact tasks are completed on time while managing expectations for lower-priority items."
+  	}
+	],
+	"technical": [
+  	{
+    	"response": "I recently worked on optimizing prompts for a GPT-based chatbot in my internship. By fine-tuning the wording and structure, I reduced ambiguity and improved the bot’s accuracy by 15%, making its responses more contextually relevant."
+  	},
+  	{
+    	"response": "In my graduate project, I designed a retrieval-augmented generation (RAG) system using vector embeddings and a custom indexing method. The main challenge was maintaining accuracy with large datasets, which I addressed by implementing a hybrid retrieval approach that combined semantic and keyword-based matching."
+  	},
+  	{
+    	"response": "I created a Python application to analyze sentiment in social media data. The challenge was efficiently processing large datasets, so I implemented multi-threading and reduced runtime by 50%, allowing us to process more data in less time."
+  	},
+  	{
+    	"response": "For CI/CD, I’ve used GitLab pipelines to automate testing and deployment. By incorporating Docker containers, I ensured consistent environments across development and production, which reduced deployment errors."
+  	},
+  	{
+    	"response": "In a project analyzing user feedback, I identified a performance bottleneck in the text preprocessing step. By optimizing the tokenization process and parallelizing the workload, I reduced runtime by 35% while maintaining data quality."
+  	}
+	],
+	"cultural_fit": [
+  	{
+    	"response": "Astoria AI’s mission aligns with my passion for creating technology that empowers people. I’ve always been drawn to projects that help individuals and organizations achieve more, and I’m excited about contributing to that mission here."
+  	},
+  	{
+    	"response": "To me, human-centric innovation means designing tools that prioritize user needs and accessibility. In my internship, I ensured our chatbot’s interface was intuitive for non-technical users, which greatly improved adoption rates."
+  	},
+  	{
+    	"response": "Teamwork is about understanding and supporting your teammates’ strengths. In my graduate group project, I ensured each member’s expertise was utilized effectively, which resulted in a more efficient and successful collaboration."
+  	},
+  	{
+    	"response": "I stay updated by following AI research journals, participating in online courses, and attending hackathons. Recently, I applied new techniques from a transformer model workshop to improve a chatbot’s contextual understanding, which enhanced its user interactions."
+  	},
+  	{
+    	"response": "Ethics in AI is a priority for me. In my graduate work, I ensured our models adhered to data privacy standards and minimized biases in training datasets, fostering trust and fairness in our applications."
+  	}
+	]
+  }
+}
