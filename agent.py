@@ -42,7 +42,8 @@ Known interview questions:
 
 The user may ask clarifying questions at any time. If the user asks a question, answer it helpfully and then return to the interview flow.
 If the user provides an answer to the current interview question, decide whether to ask a follow-up or move to the next question.
-After all questions have been addressed, inform the user the interview is complete and invite any final comments. When the user is done, thank them and end the session.
+After all questions have been addressed, inform the user the interview is complete and invite any final comments. 
+When the user is done, thank them and instruct them to end the session by clicking the "End Interview" button.
 
 Maintain a friendly and professional tone.
 """
@@ -101,12 +102,13 @@ def should_continue(state):
     """Decide what node to call next based on the last message."""
     # If the interview is complete and the user signals they are done, end.
     # If not complete, we return `ask_human` to wait for next user input.
-
+    logger.info(f"Checking if interview should continue. State: {state}")
     if interview_is_complete(state):
         # Check if user indicated they are done.
         # For simplicity, let's just assume we present a message that the interview is complete 
         # and next user input will end it.
         # We can refine this logic later.
+        logger.info("Interview is complete.")
         last_ai = [m for m in state["messages"] if isinstance(m, AIMessage)]
         if last_ai and "The interview is complete" in last_ai[-1].content:
             # We told them it's complete, next step is to let them respond one last time 
@@ -115,7 +117,7 @@ def should_continue(state):
             # Since we don't have complex logic here, let's always go to "ask_human"
             # and rely on a final user input to trigger ending.
             pass
-
+    logger.info("Continuing to ask_human")
     # Continue asking user for input until user ends the session.
     return "ask_human"
 
