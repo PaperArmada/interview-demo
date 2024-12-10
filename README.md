@@ -40,17 +40,17 @@ This repository contains the codebase for an AI-powered interview assistant desi
   - Powers AI interactions, leveraging tools and workflows for seamless session management.
 
 ### 4. **`constants.py`**
-- **Purpose**: Provides static configuration data for the application.
+- **Purpose**: Provides static configuration data for the application. Intended for future iterations.
 - **Contents**:
   - Question bank organized by categories (behavioral, situational, technical, cultural fit).
   - Evaluation criteria mapped to competencies such as problem-solving, technical expertise, and adaptability.
 
 ### 5. **`response_viewer.py`**
-- **Purpose**: A helper tool to test and explore responses from mock candidates.
+- **Purpose**: A helper tool to make things easier when testing out the application manually.
 - **Features**:
   - Upload mock candidate response JSON files for evaluation.
   - Navigate responses with an interactive interface.
-  - Copy individual responses for further analysis or sharing.
+  - Copy individual responses for easy input into the UI.
 - **How to Use**: Run the response viewer with:
   ```bash
   streamlit run response_viewer.py
@@ -69,7 +69,7 @@ This repository contains the codebase for an AI-powered interview assistant desi
 ├── response_viewer.py      # Response navigator for testing mock candidates
 ├── mock_candidates/        # Example resumes and responses for testing
 ├── requirements.txt        # Python dependencies
-└── README.md               # Repository documentation
+└── README.md               # Repository info
 ```
 
 ---
@@ -90,8 +90,8 @@ This repository contains the codebase for an AI-powered interview assistant desi
 
 2. Create and activate a virtual environment:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. Install dependencies:
@@ -129,7 +129,7 @@ Run the response viewer:
 ```bash
 streamlit run response_viewer.py
 ```
-Use this tool with files from the `mock_candidates/` directory for testing.
+This tool can access files from the `mock_candidates/` directory for easier testing (future state).
 
 ---
 
@@ -144,10 +144,10 @@ Use this tool with files from the `mock_candidates/` directory for testing.
   - Improve handling of clarifying questions and off-topic responses.
 
 - **Expanded Evaluation Criteria**:
-  - Add support for weighted scoring and more nuanced assessments.
+  - Add support for weighted scoring and nuanced assessments.
 
 - **Integration Capabilities**:
-  - Connect with applicant tracking systems (ATS) for streamlined workflows.
+  - Multi-agent systems to automatically generate questions / eval criteria based on job posting and company.
   - Support exporting interview data in standardized formats (e.g., JSON, CSV).
 
 - **Visualization**:
@@ -159,7 +159,7 @@ Use this tool with files from the `mock_candidates/` directory for testing.
 
 - **Mock Candidates**:
   - Explore the `mock_candidates/` folder to find test resumes and sample responses.
-  - Use the `response_viewer.py` app to evaluate how the system handles mock data.
+  - Use the `response_viewer.py` app to quickly access answers to feed into the main application.
 
 - **Constants**:
   - Adjust `constants.py` to add, modify, or categorize questions and scoring criteria.
