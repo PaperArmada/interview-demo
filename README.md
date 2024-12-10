@@ -36,7 +36,7 @@ This repository contains the codebase for an AI-powered interview assistant desi
 - **Purpose**: Implements the interview flow and manages the AI's logic.
 - **Key Responsibilities**:
   - Tracks session state, including questions asked and responses given.
-  - Uses evaluation criteria defined in `constants.py` for assessing responses.
+  - Uses evaluation criteria defined in `constants.py` for assessing responses (future state).
   - Powers AI interactions, leveraging tools and workflows for seamless session management.
 
 ### 4. **`constants.py`**
